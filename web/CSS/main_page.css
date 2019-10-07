@@ -1,0 +1,176 @@
+#main_content{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+}
+
+#main_title{
+    position: relative;
+    width: 100%;
+    height: 7%;
+    background: dodgerblue;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px white solid;
+
+}
+
+#title_txt_content{
+    display: flex;
+    width: 15%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#title_txt{
+    font-size: 23px;
+    color: white;
+}
+
+#title_user{
+    position: absolute;
+    display: flex;
+    right: 5%;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 20px;
+    height: 100%;
+    width: 10%;
+}
+
+
+#user_img{
+    border-radius: 100px;
+    border: 1px solid white;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+}
+
+
+#user_img_content{
+    border-radius: 100px;
+    height: 80%;
+    width: 29%;
+    z-index: 5;
+}
+
+
+#main_items{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 90%;
+}
+
+#main_right{
+    position: relative;
+    width: 100%;
+    height: 3%;
+    display: flex;
+    align-items: center;
+    background: #e8e8e8;
+    align-self: flex-end;
+}
+
+
+#right_txt{
+    margin-left: 2%;
+    font-size: 3px;
+}
+
+#items_select{
+    position: relative;
+    height: 100%;
+    width: 15%;
+    display: block;
+    background: white;
+    border-right: 2px solid dodgerblue;
+    overflow: visible;
+    z-index: 10;
+
+}
+#items_content{
+    position: relative;
+    height: 100%;
+    width: 85%;
+    border: none;
+    z-index: 0;
+}
+
+#play{
+    position: absolute;
+    width: 100%;
+    height: 400%;
+    background-color: white;
+    z-index: -1;
+    top: 100%;
+    right: 35%;
+    align-items: center;
+    justify-content: center;
+    color: dodgerblue;
+    display: none;
+    border: 1px solid dodgerblue;
+}
+
+#user_name{
+    color: white;
+    position: absolute;
+    left: 50%;
+}
+
+#user_img_content:hover #play{
+    display: flex;
+}
+
+#user_img_content:hover #user_img{
+    position: relative;
+    overflow: visible;
+    height: 200%;
+    width: 200%;
+    right: 50%;
+}
+
+
+#select_items{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+.select_item{
+    height: 8%;
+    width: 100%;
+    color: dodgerblue;
+    border-bottom: 1.5px inset dodgerblue;
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.select_item:hover{
+    background-color: dodgerblue;
+    color: white;
+    height: 9%;
+    z-index: 10;
+}
+
+.select_item:active{
+    opacity: 0.8;
+}

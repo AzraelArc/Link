@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jsAll/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <my-com></my-com>
+    <my-com1></my-com1>
+    <my-com2></my-com2><hr>
+    <my-com2></my-com2><hr>
+    <temp3></temp3>
+    <input type="button" @click="flag=!flag" value="点击测试">
+    <transition>
+        <h3 v-if="flag">我操你妈逼</h3>
+    </transition>
+
+</div>
+
+<div id="app2">
+<login></login>
+</div>
+
+
+<template id="temp">
+    <div>
+<!--        <h2>这是在html标签内完成的template-&#45;&#45;{{msg}}</h2>-->
+        <input type="button" value="+1" @click="increment">
+        <h2>{{msg}}</h2>
+    </div>
+
+</template>
+
+
+<template id="temp3">
+    <div>
+
+    <input type="button" @click="flag=!flag" value="动态添加元素测试">
+        <transition>
+            <h3 v-if="flag">{{ msg }}</h3>
+        </transition>
+    </div>
+</template>
+
+<template id="temp1">
+</template>
+
+
+
+</body>
+</html>
+
+<script>
+    Vue.component('temp3',Vue.extend({
+        template:'#temp3',
+        data:function () {
+            return {
+                msg:'我草泥马',
+                flag:false,
+            }
+        }
+    }));
+
+
+    var com = Vue.extend({
+        template:'<h2>这是使用Vue.extend创建的组件</h2>'
+    })
+
+    Vue.component('myCom',com);
+
+
+    Vue.component('myCom1',Vue.extend({
+        template:'<h2>这是使用component直接创建的组件</h2>'
+    }))
+
+
+    Vue.component(
+        'myCom2' , Vue.extend({
+            template:'#temp',
+            data:function () {
+                return{
+                    msg: 0 ,
+                }
+            },
+            methods:{
+                increment(){
+                    this.msg++;
+                }
+            }
+        })
+    )
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            flag:false,
+        },
+        methods:{},
+    })
+
+    var vm2 = new Vue({
+        el:'#app2',
+        components: {
+            login: {
+                template:'#temp1'
+            }
+        }
+    })
+</script>
+<style>
+
+
+    .v-enter,
+    .v-leave-to{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+
+    .v-enter-active,
+    .v-leave-active{
+        transition: all 0.5s ease;
+    }
+
+
+    .v-move{
+        transition: all 1.1s ease;
+    }
+
+    .v-leave-active{
+        position: absolute;
+    }
+
+</style>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jsAll/vue.js"></script>
+    <script type="text/javascript" src="jsAll/vue-router.js"></script>
+</head>
+<body>
+<div id="app">
+<!--    <a href="#/login">登陆</a>-->
+<!--    <a href="#/register">注册</a>-->
+
+    <router-link to="/login?id=10">登陆</router-link>
+    <router-link to="/register/11">注册</router-link>
+<!--    <router-link to="/">null</router-link>-->
+    <transition mode="out-in">
+    <router-view></router-view>
+    </transition>
+</div>
+<!--登陆组件-->
+<template id="tag">
+    <div>
+        <h1>登陆组件</h1>
+        <router-link to="/login/children">子组件</router-link>
+        <router-view ></router-view>
+    </div>
+
+</template>
+
+
+<template id="chi">
+    <h1>登陆子组件</h1>
+</template>
+
+<!--注册组件-->
+<template id="reg">
+<h1>注册组件</h1>
+</template>
+</body>
+</html>
+
+<script>
+    var VueRouter;
+
+
+    //路由对象
+    var routerObj = new VueRouter({
+        routes:[
+            {path:'/',redirect:'/login'},
+            {
+                path:'/login',
+                component: {
+                    template:'#tag',
+                    created(){
+                    console.log(this.$route)
+                    },
+                },
+                //子路由定义
+                children:[
+                    {path:'children',component:{
+                        template:'#chi'
+                        }}
+                ]
+            },
+            {path:'/register/:id',component: {
+                    template:'#reg',
+                    created(){
+                        console.log(this.$route)
+                    }
+                }}
+        ]
+    });
+
+
+    var vm = new Vue({
+        el:'#app',
+        data:{},
+        methods:{},
+        components:{},
+        router: routerObj,
+
+    })
+
+
+</script>
+
+<style>
+    .router-link-active{
+        color: red;
+        border: 1px solid dodgerblue;
+    }
+
+    .v-enter,
+    .v-leave-to{
+        opacity: 0;
+        transform: translateX(50px);
+        transform: rotateX(90deg);
+    }
+
+
+    .v-enter-active,
+    .v-leave-active{
+        transition: all 0.5s ease;
+    }
+</style>

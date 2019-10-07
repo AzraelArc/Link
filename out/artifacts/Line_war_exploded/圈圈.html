@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="width: 100%;height: 100%;position: absolute">
+<div id="view">
+</div>
+</body>
+</html>
+
+<script>
+
+    var x;
+    var y;
+    var view = document.getElementById('view')
+
+    function f(e) {
+
+    }
+
+    window.onmousemove = function (ev) {
+        x = ev.pageX-85;
+        y = ev.pageY-85;
+        // alert(x)
+        view.style.left = x + 'px';
+        view.style.backgroundPositionX = -x+'px'
+        view.style.top = y + 'px'
+        view.style.backgroundPositionY = -y+'px'
+    };
+
+</script>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+
+    #view{
+        position: fixed;
+        background: url("CSS/IMG/main_page/IMG_4514.JPG") no-repeat;
+        background-size: 400%;
+        border: 1px solid black;
+        border-radius: 100px;
+        width: 200px;
+        height: 200px;
+    }
+</style>

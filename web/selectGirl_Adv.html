@@ -1,0 +1,151 @@
+<!--2019.07 1.0版本发布 具备初始功能-->
+<!--2019.09.15 2.0版本发布 进行了vue改造并新增加一键脱衣功能-->
+<!--2019.09.18 2.1版本发布 对手机适配进行了调整，新增加透视圈按键，新增加图形-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The secret behind what you have seen</title>
+    <script type="text/javascript" src="jsAll/vue.js"></script>
+    <link rel="stylesheet" href="CSS/selectGirl_Adv.css">
+    <link rel="stylesheet" href="CSS/animate.css">
+</head>
+<body>
+<div id="main_container" @mousemove="update" @touchmove.stop="update" >
+    <div class="inner_container" v-if="showModel" @contextmenu.prevent="">
+        <img class="outer_show" v-for="img in source" :src="img.a" :key="img.id" @click="show(img,$event)">
+    </div>
+    <transition enter-active-class="fadeInDown" leave-active-class="flipOutX" :duration="500">
+    <div class="inner_show animated" v-if="!showModel" @contextmenu.prevent="viewChange"  @touchmove.prevent="" >
+        <img class="inner_img" :src="inner_show_img" ref="int"   v-left>
+        <div class="view_window" v-if="viewModel"
+             :style="{
+             background:viewImg,
+             left:x, top:y,
+             backgroundSize: 'auto 400%',
+             backgroundPositionX:bx,
+             backgroundPositionY:by,
+             'background-repeat': 'no-repeat'
+             }"></div>
+        <input class="inner_but" type="button" @click="showModel=!showModel">
+        <input class="inner_img_change" type="button" @click="showReal">
+        <input class="inner_phone" type="button" @click="viewChange">
+        <b class="info">使用说明:<br>
+            鼠标右键及感叹按键：透视圈<br>
+                     箭头按键：返回选择图片<br>
+                       魔法棒：一键脱衣┏ (゜ω゜)=☞
+        </b>
+    </div>
+    </transition>
+<!--    广告位-->
+<!--    <img class="advertisement" src="CSS/IMG/Hentai/Adv.gif">-->
+</div>
+</body>
+</html>
+
+<script>
+    var Vue;
+    // 常规自定义指令
+    Vue.directive('left',{
+        inserted:function (el) {
+            vm.offsetImgLeft = el.offsetLeft;
+        },
+    });
+
+    //自定义指令简写  写入的是bind 和 update
+    // Vue.directive('left',function (el) {
+    //         vm.offsetImgLeft = el.offsetLeft;
+    // });
+
+
+    // Vue.directive('width',{
+    //     inserted:function (el) {
+    //             vm.width = el.offsetWidth;
+    //             vm.height = el.offsetHeight;
+    //     }
+    // })
+
+
+    var vm = new Vue({
+        el:'#main_container',
+
+        data:{
+            offsetImg:135,
+            ImgNum: 126,   //图片总数量
+            offsetImgLeft:0,
+            showModel: true,
+            viewModel:false,
+            ImgPathA:'CSS/IMG/Hentai/',
+            ImgPathB:'.jpg' ,
+            inner_show_img:'',
+            viewImg:'',
+            imgFlag:'',
+            // viewStyle:'',
+            source:[],
+            x: '',
+            y: '',
+            bx:'',
+            by:'',
+            // width:'',
+            // height:'',
+            // bgSize:''
+        },
+
+        methods:{
+            show:function (img,ev) {
+                this.imgFlag = img;
+                this.inner_show_img = img.a;
+                this.viewImg = `url(${img.b})`;
+                this.showModel = !this.showModel;
+                if(this.viewModel===true)this.viewModel=false;
+            },
+
+
+            update:function (event) {
+                if(event.pageX){
+                    this.x = event.pageX- this.offsetImg +'px';
+                    this.y = event.pageY - this.offsetImg +'px';
+                }
+                else{
+                    this.x = event.touches[0].pageX- this.offsetImg +'px';
+                    this.y = event.touches[0].pageY - this.offsetImg +'px';
+                }
+                this.bx = -parseInt(this.x) + this.offsetImgLeft + 'px';
+                this.by = -parseInt(this.y) + 'px';
+                // this.bgSize = `auto ${this.height/200*100}%`
+                // this.viewStyle = `{'background':${this.viewImg}, 'left':${this.x}, 'top':${this.y},'backgroundSize':'auto 476.19%',
+                //     'backgroundPositionX':${this.bx},'backgroundPositionY':${this.by},'background-repeat': 'no-repeat'}`
+            },
+
+            viewChange:function () {
+                this.viewModel = !this.viewModel;
+            },
+
+            showReal:function () {
+                if (this.inner_show_img === this.imgFlag.a) {
+                    this.inner_show_img = this.imgFlag.b;
+                }
+                else {
+                    this.inner_show_img = this.imgFlag.a;
+                }
+            }
+        },
+
+        mounted:function () {
+
+        },
+
+        created:function () {
+            for (let i=1;i<this.ImgNum;i+=2){
+                this.source.push({
+                    id:i,
+                    a:this.ImgPathA+i+this.ImgPathB,
+                    b:this.ImgPathA+(i+1)+this.ImgPathB
+                })
+            }
+        },
+
+    })
+
+</script>
+

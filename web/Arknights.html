@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arknights</title>
+    <link rel="stylesheet" href="CSS/Arknights.css">
+</head>
+<body>
+<div class="background_container">
+    <div id="bg_img" class="bg_img"></div>
+</div>
+<div class="char_container">
+<ul class="char_list">
+
+    <li class="char_items">
+        <img class="items_img" src="CSS/IMG/Arknights/liskarm.png">
+    </li>
+    <li class="char_items">
+        <img class="items_img" src="CSS/IMG/Arknights/frank.png">
+    </li>
+    <li class="char_items">
+        <img class="items_img" src="CSS/IMG/Arknights/chen.png">
+    </li>
+    <li class="char_items">
+        <img class="items_img" src="CSS/IMG/Arknights/red.png">
+    </li>
+</ul>
+</div>
+</body>
+</html>
+
+<script>
+    var x,y;
+
+    window.onmousemove = function (e) {
+        x = e.pageX||e.clientX;
+        y = e.pageY||e.clientY;
+        document.getElementById('bg_img').style.left = -x/30-50+'px';
+        document.getElementById('bg_img').style.top = -y/30-50+'px';
+
+    }
+
+</script>

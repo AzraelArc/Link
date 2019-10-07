@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>照片滑动</title>
+    <link rel="stylesheet" href="CSS/PhotoFlow.css">
+</head>
+<body>
+<div id="container" class="content">
+    <div class="photo_content">
+        <ul id="ul">
+            <li><img src="CSS/IMG/PhotoFlow/1.jpg"></li>
+            <li><img src="CSS/IMG/PhotoFlow/2.jpg"></li>
+            <li><img src="CSS/IMG/PhotoFlow/3.png"></li>
+        </ul>
+        <div class="but_content">
+            <button id="one" class="but_move"></button>
+            <button id="two" class="but_move"></button>
+            <button id="three" class="but_move"></button>
+
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
+
+<script>
+
+    var timer;
+
+    function but(){
+        document.querySelector("#one").onclick = function () {
+            document.querySelector("#ul").style.left = "0px";
+            window.clearInterval(timer);
+            timer = setInterval(init,5000);
+
+        }
+        document.querySelector("#two").onclick = function () {
+            document.querySelector("#ul").style.left = "-360px";
+            window.clearInterval(timer);
+            timer = setInterval(init,5000);
+
+
+        }
+        document.querySelector("#three").onclick = function () {
+            document.querySelector("#ul").style.left = "-720px";
+            window.clearInterval(timer);
+            timer = setInterval(init,5000);
+
+        }
+    }
+
+
+
+    function init() {
+
+        window.clearInterval(timer);
+
+       if (window.getComputedStyle(ul,null)['left']=='0px'){
+           document.querySelector("#ul").style.left = "-360px";
+       }
+       else if (window.getComputedStyle(ul,null)['left']=='-360px') {
+           document.querySelector("#ul").style.left = "-720px";
+       }
+       else if(window.getComputedStyle(ul,null)['left']=='-720px'){
+           document.querySelector("#ul").style.left = "0px";
+       }
+
+       timer = setInterval(init,5000);
+
+
+    }
+
+
+    window.onload = function () {
+        timer = null
+        init();
+        but();
+    }
+
+
+    //遍历节点
+    // var div = document.getElementById("container");
+    // var iterator = document.createNodeIterator(div,NodeFilter.SHOW_ELEMENT,null,false);
+    // var node = iterator.nextNode();
+    // while(node !== null){
+    //     alert(node.tagName);
+    //     node = iterator.nextNode();
+    // }
+
+
+
+</script>
+
+
+
+

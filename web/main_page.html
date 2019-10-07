@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <script src="jsAll/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="CSS/main_page.css">
+</head>
+<body>
+<div id="main_content">
+    <div id="main_title">
+        <div id="title_txt_content"><small id="title_txt">Star Sky</small></div>
+        <div id="title_user">
+            <div id="user_img_content">
+                <img id="user_img" src="CSS/IMG/main_page/5.jpg">
+                <div id="play">Test</div>
+            </div>
+            <small id="user_name" >HenTai</small>
+        </div>
+    </div>
+    <div id="main_items">
+        <div id="items_select">
+            <ul id="select_items">
+                <li id="select_girls" class="select_item">背后的密码</li>
+                <li id="particle" class="select_item">移动粒子</li>
+                <li id="solar_system" class="select_item">太阳系</li>
+                <li class="select_item">1</li>
+                <li class="select_item">1</li>
+                <li class="select_item">1</li>
+                <li class="select_item">1</li>
+            </ul>
+        </div>
+        <iframe id="items_content" src=""></iframe>
+    </div>
+    <div id="main_right"><small id="right_txt">Copyright © 2018 - 2019 Azrael_Arc Inc. All Rights Reserved</small></div>
+</div>
+</body>
+</html>
+
+<script>
+    var curWwwPath = window.document.location.href;
+    var address=curWwwPath.substring(0,curWwwPath.substring(1).lastIndexOf('/')+1);
+
+    $("#select_girls").click(function(){
+        $("#items_content").attr("src",address+"/selectGirl_Adv.html");//select_girls.html
+    });
+
+
+    $("#particle").click(function(){
+        $("#items_content").attr("src",address+"/move_points.html");
+    });
+
+    $('#solar_system').click(function () {
+        $("#items_content").attr("src",address+"/solar_system.html");
+    })
+</script>

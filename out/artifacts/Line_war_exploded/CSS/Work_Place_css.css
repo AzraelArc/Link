@@ -1,0 +1,48 @@
+#title{
+    top: 0px;
+    left: 0px;
+    height: 60px;
+    width: 100%;
+    background: #000000;
+    position: fixed;
+}
+
+#sign{
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    height: 30px;
+    width: 100%;
+    background: skyblue;
+}
+
+#sign_name{
+    margin-left: 30px;
+    margin-top: 1px;
+}
+
+#select_box{
+    position: fixed;
+    float: left;
+    top: 60px;
+    left: 0px;
+    height: 100%;
+    width: 300px;
+    background: red;
+}
+
+#main_box{
+    position: fixed;
+    float: left;
+    top: 60px;
+    left: 300px;
+    height: 100%;
+    width: 100%;
+    background: yellow;
+    border: 0px;
+}
+
+body{
+    top: 0px;
+    left: 0px;
+}

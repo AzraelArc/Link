@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="main_container">
+    <canvas width="1280" height="720" id="canvas">
+    </canvas>
+</div>
+</body>
+</html>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .main_container{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url("CSS/IMG/main_page/IMG_4514.JPG");
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    canvas{
+        position: relative;
+        width: 1280px;
+        height: 720px;
+        background: transparent;
+    }
+
+</style>
+
+<script>
+
+    var canvas;
+    var context;
+    var x;
+    var y1;
+    var y2
+    var sy;
+    var i=0;
+
+
+    window.onload = function (ev) {
+       inti();
+
+    }
+
+    canvas = document.getElementById("canvas");
+    context = canvas.getContext("2d");
+    var gradient = context.createLinearGradient(0,0,1280,720);
+    gradient.addColorStop(0,'white');
+    gradient.addColorStop(0.5,'black');
+    gradient.addColorStop(1,'yellow');
+
+    function inti() {
+
+
+            canvas.height = canvas.height;
+            context.shadowOffsetX = 20;
+            context.shadowOffsetY = 20;
+            context.shadowBlur = 4;
+            context.shadowColor = 'rgba(0,0,0,0.5)'
+
+
+            i+=0.02;
+            sy =30*Math.sin(0+i)+50
+
+            context.beginPath();
+            context.fillStyle = "transparent"
+            context.fillRect(0,0,1280,720);
+            context.fill();
+            context.strokeStyle = "red";
+            context.lineWidth = 10;
+            context.fillStyle = gradient;
+            for (x = 0; x <= 1280; x++) {
+                y1 = (30 * Math.sin(0.005 * x+i) + 50);
+                context.lineTo(x, y1);
+            }
+
+
+            for (x = 1280; x >= 0; x--) {
+                y2 = (30 * Math.sin(0.005 * x+i) + 680);
+                context.lineTo(x, y2);
+            }
+
+            context.moveTo(0, sy);
+            context.stroke();
+            context.fill();
+            context.closePath();
+
+
+           window.requestAnimationFrame(inti);
+    }
+
+
+
+
+</script>

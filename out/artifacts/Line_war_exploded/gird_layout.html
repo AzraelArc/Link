@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <label for="firstname">First name:</label>
+    <input type="text" id="firstname" name="firstname" />
+    <label for="lastname">Last name:</label>
+    <input type="text" id="lastname" name="lastname" />
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" />
+    <label for="address2">Address 2:</label>
+    <input type="text" id="address2" name="address2" />
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" />
+    <label for="state">State:</label>
+    <select type="text" id="state" name="state">
+        <option value="WA">Washington</option>
+    </select>
+    <label for="zip">Zip:</label>
+    <input type="text" id="zip" name="zip" />
+
+    <div id="department-block">
+        <label for="department">Department:</label>
+        <select id="department" name="department" multiple>
+            <option value="finance">Finance</option>
+            <option value="humanresources">Human Resources</option>
+            <option value="marketing">Marketing</option>
+        </select>
+    </div>
+
+    <div id="buttons">
+        <button id="cancel">Cancel</button>
+        <button id="back">Back</button>
+        <button id="next">Next</button>
+    </div>
+</form>
+</body>
+</html>
+
+<style type="text/css">
+    form {
+        display: grid;
+        /* 定义三列，均为其内容大小，并命名相应的网格行。*/
+        grid-template-columns: [labels] auto [controls] auto [oversized] auto;
+        grid-auto-flow: row dense;
+    }
+    form > label {
+        /* 将所有标签放在“标签”列中，并自动寻找下一可用行。*/
+        grid-column: labels;
+        grid-row: auto;
+    }
+    form > input, form > select {
+        /* 将所有控件放在“控制”列中，并自动寻找下一行。*/
+        grid-column: controls;
+        grid-row: auto;
+    }
+
+    #department-block {
+        /* 自动将此网格项放置在第一行的“大号”列中，
+        其中一个区域跨越三行，不会覆盖其他显式放置的网格项或区域
+        或任何在该区域之前自动放置的网格项。*/
+        grid-column: oversized;
+        grid-row: span 6;
+    }
+
+    /* 把所有的表单按钮放在明确定义的网格区域. */
+    #buttons {
+        grid-row: auto;
+
+        /* 确保按钮区域横跨整个行轴上的网格单元。*/
+        grid-column: span 3;
+        text-align: center;
+    }
+</style>

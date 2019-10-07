@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排序</title>
+    <script src="jsAll/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <label>
+        <b>导入文本</b>
+        <input type="file" @change="loadTextFromFile">
+    </label>
+    <label>
+    <b>请在输入框输入数组，用英文','分开数字，如'1,2,3'</b>
+    <input type="text" v-model="input">
+    </label>
+    <label>
+        <b>请选择排序方式（0：冒泡排序；1：选择排序）</b>
+        <select v-model="sortModel">
+            <option>0</option>
+            <option>1</option>
+        </select>
+    </label>
+    <label>
+        <b>请选择模式（0：从小到大；1：从大到小）</b>
+        <select v-model="dirModel">
+            <option>0</option>
+            <option>1</option>
+        </select>
+    </label>
+    <label>
+        <b>结果</b>
+        <input type="text" disabled="disabled" v-model="res">
+    </label>
+    <a @click.prevent="download('output.txt',arr.toString())">导出结果</a>
+    <b>结果出现错误请检查输入是否出现错误</b>
+</div>
+</body>
+</html>
+<script>
+    var Vue;
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            input:'1,2,3',
+            arr:[1,2,3],
+            dirModel:0,
+            sortModel:0,
+        },
+        methods:{
+            loadTextFromFile: function(e) {   //导入文本
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onload = e => this.$emit("load", this.inText(e.target.result));
+                reader.readAsText(file);
+            },
+
+            inText:function (item) {
+                this.input = item;
+            },
+
+
+            download: function(filename, text) {   //导出文本
+                var element = document.createElement('a');
+                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+                element.setAttribute('download', filename);
+
+                element.style.display = 'none';
+                document.body.appendChild(element);
+
+                element.click();
+
+                document.body.removeChild(element);
+            }
+
+        },
+        watch:{
+            'input':function () {
+                this.arr = this.input.split(',');
+            }
+        },
+        computed:{
+            'res': function () {
+               if(this.sortModel==0){   //冒泡排序
+                   if (this.dirModel==0){   //从小到大
+                       for (var i=0;i<this.arr.length;i++){
+                           for (var j=i+1;j<this.arr.length;j++){
+                               if(~~this.arr[i]>~~this.arr[j]){    //~~为强制转换为数字
+                                   var temp = this.arr[i];
+                                   this.arr[i] = this.arr[j];
+                                   this.arr[j] = temp;
+                               }
+                           }
+                       }
+                       return this.arr;
+                   }
+                   else {    //从大到小
+                       for (var i=0;i<this.arr.length;i++){
+                           for (var j=i+1;j<this.arr.length;j++){
+                               if(~~this.arr[i]<~~this.arr[j]){
+                                   var temp = this.arr[i];
+                                   this.arr[i] = this.arr[j];
+                                   this.arr[j] = temp;
+                               }
+                           }
+                       }
+                       return this.arr;
+                   }
+               }
+               else {   //选择排序
+                   if (this.dirModel==0){   //从小到大
+                       for(var i=0;i<this.arr.length;i++){
+                           var min = i;
+                           for(var j=i+1;j<this.arr.length;j++){
+                               if(~~this.arr[j]<~~this.arr[min]){
+                                   min = j;
+                               }
+                           }
+                           var temp = this.arr[i];
+                           this.arr[i] = this.arr[min];
+                           this.arr[min] = temp;
+                       }
+                       return this.arr;
+                   }
+                   else {    //从大到小
+                       for(var i=0;i<this.arr.length;i++){
+                           var max = i;
+                           for(var j=i+1;j<this.arr.length;j++){
+                               if(~~this.arr[j]>~~this.arr[max]){
+                                   max = j;
+                               }
+                           }
+                           var temp = this.arr[i];
+                           this.arr[i] = this.arr[max];
+                           this.arr[max] = temp;
+                       }
+                       return this.arr;
+                   }
+               }
+            }
+        }
+    })
+
+
+
+
+
+
+</script>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+
+    #app{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #app *{
+        margin-top: 10px;
+    }
+
+    input[type='text']{
+        width: 500px;
+    }
+
+
+    a{
+        color: #367aec;
+        text-decoration: underline;
+    }
+</style>
+

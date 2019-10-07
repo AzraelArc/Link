@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bridge</title>
+    <link rel="script" href="jsAll/vue.js">
+</head>
+<body>
+<div></div>
+
+</body>
+</html>
+
+<script>
+    var thisSide = [1,2,5,10];
+    var thatSide = [];
+    var cop0 = [];
+    var cop1 = [];
+    var cop2 = [];
+
+    
+    function plan(co){
+        let num = 0;
+        for (var q=0;q<thisSide.length;q++){
+            for(var j=q+1;j<thisSide.length;j++){
+                co[num]=new createCop(thisSide[q],thisSide[j]);
+                num++;
+            }
+        }
+    }
+
+
+    function createCop(a,b) {
+        this.a = a;
+        this.b = b;
+    }
+
+
+    function tran(i,co) {
+            thatSide.push(co[i].a);   //将两个人运到对岸
+            thatSide.push(co[i].b);
+            let x = thisSide.indexOf(co[i].a);
+            thisSide.splice(x,1);
+            let y = thisSide.indexOf(co[i].b);//将两人从原数组删除；
+            thisSide.splice(y,1);
+            if(thisSide===[]);
+            else {
+                let z = Math.min(...thatSide);  //找出最小的值；
+                thisSide.push(z);
+                let k = thatSide.indexOf(z);  //找最小值的坐标
+                thatSide = thatSide.splice(k,1);   //将最小值从原来的数组中删除
+        }
+    }
+    
+    function Calculation() {
+        plan(cop0);
+        // console.log(cop0);
+        for(var l=0;l<cop0.length;l++){
+            thisSide = [1,2,5,10];
+            thatSide = [0];
+            tran(l,cop0);
+            plan(cop1);
+            var _thisSide = thisSide;
+            var _thatSide = thatSide;
+            for (var m=0;m<cop1.length;m++){
+                thisSide = _thisSide;
+                thatSide = _thatSide;
+                tran(m,cop1);
+                plan(cop2);
+                // for (var n=0;n<cop2.length;n++){
+                //     tran(n,cop2);
+                //     console.log(1);
+                // }
+            }
+        }
+
+    }
+
+
+    Calculation();
+
+
+</script>

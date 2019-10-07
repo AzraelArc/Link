@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页滑动</title>
+    <link rel="stylesheet" href="CSS/slip.css">
+</head>
+<body>
+<div class="main_container">
+    <div id="pic" class="picture_container">
+        <input id="x" type="text" disabled="disabled">
+        <input id="y" type="text" disabled="disabled">
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+    var x,y;
+
+    window.onmousemove = function (e) {
+        x = e.pageX||e.clientX;
+        y = e.pageY||e.clientY;
+        document.getElementById('x').value = x;
+        document.getElementById('y').value = y;
+        document.getElementById('pic').style.left = -x/50-50+'px';
+        document.getElementById('pic').style.top = -y/50-50+'px';
+
+    }
+
+    window.onclick = function () {
+        alert(document.getElementById('pic').style.left+'/'+document.getElementById('pic').style.top)
+    }
+
+</script>

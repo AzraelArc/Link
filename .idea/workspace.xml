@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Line:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="244065a3-57b0-4b1c-bdfd-65516fe16d0f" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db_user@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db_user@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db_user@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="db_user: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db_user@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="collations" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Line" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Vue Single File Component" />
+        <option value="HTML4 File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/web/game_1.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/web/正则表达式.html" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="1Qb9JkQTNC8UryxSd5d0f3GJcsl" />
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="drawText&#9;null&#9;null&#10;title&#9;null&#9;null&#10;play&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="B:/sdk" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567956472209" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Link" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15384616" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="B:\Project\Line\web\CSS\IMG\other" />
+      <recent name="B:\Project\Line\web\jsAll" />
+      <recent name="B:\Project\Line\web\CSS\IMG\Hentai" />
+      <recent name="B:\Project\Line\web\CSS\IMG\Arknights" />
+      <recent name="B:\Project\Line\web\CSS\IMG\Aeknights" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="B:\Project\Line\web\CSS\IMG\other" />
+      <recent name="B:\Project\Line\web\CSS\IMG\Hentai" />
+      <recent name="B:\Project\Line\web\CSS" />
+      <recent name="B:\Project\Line\web\other" />
+      <recent name="B:\Project\Line\web\js" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.16" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.16" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="Line:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_16_Line" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56294" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Line:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="244065a3-57b0-4b1c-bdfd-65516fe16d0f" name="Default Changelist" comment="" />
+      <created>1554302028841</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1554302028841</updated>
+      <workItem from="1554302032688" duration="5162000" />
+      <workItem from="1554387811301" duration="3032000" />
+      <workItem from="1554472804585" duration="4752000" />
+      <workItem from="1554479087373" duration="2593000" />
+      <workItem from="1554532353751" duration="7116000" />
+      <workItem from="1554642686741" duration="4555000" />
+      <workItem from="1555237203202" duration="2864000" />
+      <workItem from="1555243018356" duration="3072000" />
+      <workItem from="1555246788377" duration="4404000" />
+      <workItem from="1555256544305" duration="1095000" />
+      <workItem from="1555326828663" duration="3124000" />
+      <workItem from="1555424031764" duration="26000" />
+      <workItem from="1555428249823" duration="3947000" />
+      <workItem from="1555492628087" duration="2812000" />
+      <workItem from="1555496172095" duration="388000" />
+      <workItem from="1555515876564" duration="31000" />
+      <workItem from="1555515953947" duration="1070000" />
+      <workItem from="1555651986507" duration="13205000" />
+      <workItem from="1555669049901" duration="8942000" />
+      <workItem from="1555680434713" duration="5876000" />
+      <workItem from="1555744183522" duration="7813000" />
+      <workItem from="1555754605386" duration="8181000" />
+      <workItem from="1555837521751" duration="252000" />
+      <workItem from="1555933974425" duration="2264000" />
+      <workItem from="1555938420650" duration="10266000" />
+      <workItem from="1555948891164" duration="676000" />
+      <workItem from="1556025339283" duration="7236000" />
+      <workItem from="1556032667567" duration="91000" />
+      <workItem from="1556118956287" duration="3193000" />
+      <workItem from="1556166605157" duration="5811000" />
+      <workItem from="1556175681566" duration="599000" />
+      <workItem from="1556195052875" duration="2685000" />
+      <workItem from="1556198567036" duration="8604000" />
+      <workItem from="1556267637622" duration="3885000" />
+      <workItem from="1556279987921" duration="3596000" />
+      <workItem from="1556371204364" duration="9749000" />
+      <workItem from="1556457166667" duration="7194000" />
+      <workItem from="1556544404986" duration="4222000" />
+      <workItem from="1556551593482" duration="3425000" />
+      <workItem from="1556627631794" duration="10779000" />
+      <workItem from="1556687625229" duration="14920000" />
+      <workItem from="1556705056674" duration="2786000" />
+      <workItem from="1556718710246" duration="81000" />
+      <workItem from="1556721289835" duration="2104000" />
+      <workItem from="1556781831867" duration="754000" />
+      <workItem from="1556804732810" duration="5541000" />
+      <workItem from="1556976464541" duration="1539000" />
+      <workItem from="1557063328123" duration="1146000" />
+      <workItem from="1557064772130" duration="2114000" />
+      <workItem from="1557134429715" duration="5000" />
+      <workItem from="1557138070539" duration="2957000" />
+      <workItem from="1557150107346" duration="9094000" />
+      <workItem from="1557237999964" duration="6403000" />
+      <workItem from="1557330170240" duration="870000" />
+      <workItem from="1557409846489" duration="4349000" />
+      <workItem from="1557485911572" duration="2536000" />
+      <workItem from="1557498106320" duration="1453000" />
+      <workItem from="1557663246566" duration="1118000" />
+      <workItem from="1557844832574" duration="2025000" />
+      <workItem from="1558255155243" duration="505000" />
+      <workItem from="1558270147130" duration="3586000" />
+      <workItem from="1558423484467" duration="731000" />
+      <workItem from="1558588556687" duration="115000" />
+      <workItem from="1558622916877" duration="1697000" />
+      <workItem from="1558882134122" duration="309000" />
+      <workItem from="1558959503382" duration="1704000" />
+      <workItem from="1560764479990" duration="330000" />
+      <workItem from="1561478049569" duration="591000" />
+      <workItem from="1561478889203" duration="242000" />
+      <workItem from="1561534043761" duration="1322000" />
+      <workItem from="1561561295501" duration="710000" />
+      <workItem from="1561563645714" duration="436000" />
+      <workItem from="1561564349073" duration="193000" />
+      <workItem from="1561603017231" duration="92000" />
+      <workItem from="1561603759219" duration="256000" />
+      <workItem from="1561632971767" duration="292000" />
+      <workItem from="1561635349371" duration="573000" />
+      <workItem from="1561707779218" duration="201000" />
+      <workItem from="1561719630931" duration="778000" />
+      <workItem from="1561722509931" duration="1005000" />
+      <workItem from="1562684628234" duration="984000" />
+      <workItem from="1562753072378" duration="2811000" />
+      <workItem from="1562932055588" duration="11207000" />
+      <workItem from="1563286899505" duration="1447000" />
+      <workItem from="1564069997358" duration="194000" />
+      <workItem from="1564236439784" duration="2918000" />
+      <workItem from="1564320090655" duration="6824000" />
+      <workItem from="1564473802248" duration="17772000" />
+      <workItem from="1564497737789" duration="1104000" />
+      <workItem from="1564578454352" duration="647000" />
+      <workItem from="1564582289729" duration="5640000" />
+      <workItem from="1564656206515" duration="5397000" />
+      <workItem from="1564755083238" duration="3894000" />
+      <workItem from="1564931347136" duration="2379000" />
+      <workItem from="1565019217144" duration="608000" />
+      <workItem from="1565076392578" duration="325000" />
+      <workItem from="1565267796265" duration="1283000" />
+      <workItem from="1565270807564" duration="523000" />
+      <workItem from="1565271370617" duration="686000" />
+      <workItem from="1565272097183" duration="303000" />
+      <workItem from="1565272440843" duration="99000" />
+      <workItem from="1565272575605" duration="761000" />
+      <workItem from="1565357159543" duration="2153000" />
+      <workItem from="1565438731812" duration="2433000" />
+      <workItem from="1565530853061" duration="8079000" />
+      <workItem from="1565697021188" duration="4513000" />
+      <workItem from="1565793966802" duration="2730000" />
+      <workItem from="1565865199436" duration="653000" />
+      <workItem from="1566051534865" duration="4408000" />
+      <workItem from="1566134173910" duration="4796000" />
+      <workItem from="1566712820250" duration="334000" />
+      <workItem from="1566993111081" duration="1876000" />
+      <workItem from="1567002040112" duration="3819000" />
+      <workItem from="1567070288070" duration="615000" />
+      <workItem from="1567083204630" duration="2583000" />
+      <workItem from="1567603553827" duration="4202000" />
+      <workItem from="1567698428742" duration="383000" />
+      <workItem from="1567929036409" duration="18282000" />
+      <workItem from="1568027254686" duration="269000" />
+      <workItem from="1568028368376" duration="104000" />
+      <workItem from="1568028495077" duration="456000" />
+      <workItem from="1568029033366" duration="7685000" />
+      <workItem from="1568105563793" duration="1609000" />
+      <workItem from="1568130861628" duration="246000" />
+      <workItem from="1568181778100" duration="4832000" />
+      <workItem from="1568205987433" duration="4303000" />
+      <workItem from="1568303075563" duration="2138000" />
+      <workItem from="1568342902150" duration="62000" />
+      <workItem from="1568372634380" duration="13321000" />
+      <workItem from="1568466125142" duration="9777000" />
+      <workItem from="1568520417933" duration="27051000" />
+      <workItem from="1568550948472" duration="225000" />
+      <workItem from="1568551201020" duration="191000" />
+      <workItem from="1568551418071" duration="975000" />
+      <workItem from="1568630823229" duration="324000" />
+      <workItem from="1568631252405" duration="272000" />
+      <workItem from="1568631548057" duration="13123000" />
+      <workItem from="1568715988461" duration="5448000" />
+      <workItem from="1568730032517" duration="3630000" />
+      <workItem from="1568786707842" duration="7338000" />
+      <workItem from="1568803295134" duration="21261000" />
+      <workItem from="1568859769943" duration="4729000" />
+      <workItem from="1568897292671" duration="5442000" />
+      <workItem from="1568907376355" duration="803000" />
+      <workItem from="1568981763229" duration="7777000" />
+      <workItem from="1569075092845" duration="5042000" />
+      <workItem from="1569134800197" duration="6978000" />
+      <workItem from="1569160792271" duration="1815000" />
+      <workItem from="1569244295500" duration="3055000" />
+      <workItem from="1569324887744" duration="9620000" />
+      <workItem from="1569388887840" duration="1156000" />
+      <workItem from="1569391066632" duration="4808000" />
+      <workItem from="1569509218078" duration="115000" />
+      <workItem from="1569509433658" duration="15000" />
+      <workItem from="1569509470816" duration="116000" />
+      <workItem from="1569509822710" duration="942000" />
+      <workItem from="1569585454037" duration="11720000" />
+      <workItem from="1569655926814" duration="2851000" />
+      <workItem from="1569660729274" duration="2704000" />
+      <workItem from="1569677743974" duration="621000" />
+      <workItem from="1569678433363" duration="3066000" />
+      <workItem from="1570345482096" duration="18756000" />
+      <workItem from="1570456493337" duration="3142000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>Line:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>jquery</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ArkLink</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>commons-beanutils-1.9.3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

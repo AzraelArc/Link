@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body id="body">
+<div style="width: 100%;height: 100% ">
+    <div style="z-index: 1;position: absolute;left: 1px;top: 1px"><img src="BG/64066603_p0.jpg" style="width: 100%;height: 100%;"><img/></div>
+    <div id="login_box" style="width: 400px;height: 230px; border: 1px solid #000000;margin-left: 35%;margin-top: 10% ;z-index: 10;position: absolute;border-radius: 10px">
+        <h2 style="color: #000000;margin-left: 45%;margin-top: 10px">登陆</h2>
+        <div style="margin-top: 10%;margin-left: 18%;z-index: 0">
+            <form action="Servlet/LoginServlet" method="get">
+            <p><b>账号：</b><input id="account"  name="uname" placeholder="请输入账号" type="text" style="width: 200px;height: 25px;border: 1px solid #000000;"></p>
+            <p><b>密码：</b><input id="password" name="pwd" placeholder="请输入密码" type="password" style="width: 200px;height: 25px;border: 1px solid #000000"></p>
+            <p><input id="submit" type="submit" value="登陆" style="height: 25px;width: 60px;margin-left: 18%;border-radius: 5px;background: none;border: 1px solid black"
+            onmouseover="this.style.opacity = 0.6" onmouseout="this.style.opacity = 1">
+                <input id="register" type="button" value="注册" style="height: 25px;width: 60px;margin-left: 5%;border-radius: 5px;background: none;border: 1px solid black"
+                       onmouseover="this.style.opacity = 0.6" onmouseout="this.style.opacity = 1">
+            </p>
+            </form>
+        </div>
+    </div>
+    <div  id="register_box" style="position: absolute;margin-left: 35%;margin-top: 10% ;width: 400px;height: 230px; border: 1px solid #000000;z-index: 20;border-radius: 10px;display: none">
+        <h2 style="color: #000000;margin-left: 45%;margin-top: 10px">注册</h2>
+        <div style="margin-top: 10%;margin-left: 18%;">
+            <form action="Servlet/RegisterServlet" method="get">
+                <p><b>账号：</b><input id="r_account"  name="r_uname" placeholder="请输入账号" type="text" style="width: 200px;height: 25px;border: 1px solid #000000;"></p>
+                <p><b>密码：</b><input id="r_password" name="r_pwd" placeholder="请输入密码" type="password" style="width: 200px;height: 25px;border: 1px solid #000000"></p>
+                <p><input id="r_submit" type="button" value="注册" style="height: 25px;width: 60px;margin-left: 35%;border-radius: 5px;background: none;border: 1px solid black"
+                          onmouseover="this.style.opacity = 0.6" onmouseout="this.style.opacity = 1">
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+
+    var $;
+    var curWwwPath = window.document.location.href;
+    var projectName=curWwwPath.substring(0,curWwwPath.substring(1).lastIndexOf('/')+1);
+
+
+    document.getElementById("register").onclick = function (ev) {
+        document.getElementById("login_box").style.display = "none";
+        document.getElementById("register_box").style.display = "inline";
+    }
+
+
+
+    // document.getElementById("submit").onclick = function (ev) {
+    //     var ac = document.getElementById("account").value;
+    //     var pw = document.getElementById("password").value;
+    //     $.ajax({
+    //         url:projectName+"/Servlet/LoginServlet",
+    //         type:"post",
+    //         data:{
+    //             uname:ac,
+    //             pwd:pw,
+    //         },
+    //         datatype:"json",
+    //         success:function (data) {
+    //             if(data.status==1)alert("success")
+    //             else alert("登陆失败！");
+    //         },
+    //         error:function (data) {
+    //             alert("连接失败");
+    //         }
+    //
+    //     });
+    // }
+
+    document.getElementById("r_submit").onclick = function (ev) {
+        var r_ac = document.getElementById("r_account").value;
+        var r_pw = document.getElementById("r_password").value;
+        $.ajax({
+            url:projectName+"/Servlet/RegisterServlet",
+            type:"post",
+            data:{
+                raccount:r_ac,
+                rpassword:r_pw,
+            },
+            dataType:"json",
+            success:function (data) {
+                if(data.Status==1)alert("success");
+                // else if(data.status==2)alert("failed");
+            },
+
+            error:function (data) {
+                alert("failed");
+            },
+
+        });
+
+        document.getElementById("login_box").style.display = "inline";
+        document.getElementById("register_box").style.display = "none";
+    }
+</script>

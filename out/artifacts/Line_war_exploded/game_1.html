@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>接绿帽</title>
+    <!--<link rel="stylesheet" href="CSS/game_1.css">-->
+</head>
+<body>
+<div id="main_container">
+    <input id="hat_num" type="text" >
+    <div id="game_container">
+        <div id="player"></div>
+    </div>
+</div>
+</body>
+</html>
+
+
+<script>
+    var oDiv_main;
+    var oDiv_game;
+    var oDiv_player;
+    var oDiv_game_width;
+    var oDiv_player_width;
+    var oDiv_game_height;
+    var oDiv_player_height;
+    var start;
+    var hats = [];
+    var hats_fall;
+    var hats_set;
+    var timer_;
+    var keyLister;
+    var right = false;
+    var left = false;
+    var hat_pass = 0;
+
+    window.onload = function (ev) {
+        oDiv_main = document.getElementById("main_container");
+        oDiv_game = document.getElementById("game_container");
+        oDiv_player = document.getElementById("player")
+        oDiv_game_width = parseInt(window.getComputedStyle(oDiv_game,null).width);
+        oDiv_player_width = parseInt(window.getComputedStyle(oDiv_player,null).width);
+        oDiv_game_height = parseInt(window.getComputedStyle(oDiv_game,null).height);
+        oDiv_player_height = parseInt(window.getComputedStyle(oDiv_player,null).height);
+        start = new player();
+        start.move();
+        start.fluent_move();//人物移动
+        hats_fall = new create_hats(20,0.005);  //创建帽子,设置帽子数量及加速度
+        hats_fall.move();//帽子移动函数
+        hat_pass_num();  //显示躲过的绿帽数量
+    }
+
+
+
+
+    function hat_pass_num() {
+        var node = document.getElementById('hat_num');
+        node.value = '你成功躲过了'+hat_pass+'个绿帽';
+        window.requestAnimationFrame(hat_pass_num)
+    }
+
+
+
+    //玩家
+
+    function player() {
+        this.x = oDiv_game_width/2-oDiv_player_width;
+        this.width = oDiv_game_width;
+        this.speed = 10;
+        oDiv_player.style.left = this.x + 'px';
+    }
+
+    player.prototype.move = function () {
+        keyLister = window.onkeydown = player_move;
+        window.onkeyup = player_unmove;
+    }
+
+
+    player.prototype.fluent_move = function () {
+        var _this = this;
+        if(left&& this.x >=this.speed){
+            this.x -= this.speed;
+            oDiv_player.style.left = this.x + 'px';
+        }
+        else if(right && this.x <= oDiv_game_width-oDiv_player_width-this.speed){
+            this.x += this.speed;
+            oDiv_player.style.left = this.x + 'px';
+        }
+
+        timer_ = window.requestAnimationFrame(() => {
+            this.fluent_move()
+        });
+    }
+
+
+
+
+
+    function player_unmove(ev) {
+        var oEvent = ev||event;
+        switch (oEvent.keyCode) {
+            case 37:left = false;break;
+            case 39:right = false;break;
+            default:break;
+        }
+    }
+
+
+    function player_move(ev) {
+        var oEvent = ev||event;
+        left = false;
+        right =false;
+        switch (oEvent.keyCode) {
+            case 37:left = true;break;
+            case 39:right = true;break;
+            default:break;
+        }
+
+
+        //直接使用按键，不设置定时器，长按时会出现延迟现象
+
+        // if(oEvent.keyCode === 37&& start.x >=start.speed){
+        //     start.x -= start.speed;
+        //     oDiv_player.style.left = start.x + 'px';
+        // }
+        // else if(oEvent.keyCode === 39 && start.x <= oDiv_game_width-oDiv_player_width-start.speed){
+        //     start.x += start.speed;
+        //     oDiv_player.style.left = start.x + 'px';
+        // }
+
+    }
+
+    //绿帽
+    function hat() {
+        this.x = Math.random()*oDiv_game_width;
+        this.y = 0;
+        this.speed = Math.random()*2;
+    }
+
+
+    function create_hats(num,speed) {
+        this.num = num;   //帽子数量
+        this.speed = speed;
+        for(var i=0;i<this.num;i++){
+            hats[i] = new hat();
+            var node = document.createElement('div');
+            node.className = 'hat'
+            node.style.left = hats[i].x + 'px';
+            oDiv_game.appendChild(node)
+        }
+
+
+    }
+
+    create_hats.prototype.move = function() {
+        var _this = this;
+        hats_set = document.getElementsByClassName('hat');
+        for (var i=0;i<this.num;i++){
+            var height = parseInt(window.getComputedStyle(hats_set[i],null).top);
+            if (height >= oDiv_game_height) {
+                hats[i].y = 0;
+                hats[i].x = Math.random()*oDiv_game_width;
+                hat_pass++;
+            }
+            else {
+                hats[i].y += hats[i].speed;
+            }
+            hats[i].speed+=this.speed;  //加速度
+            hats_set[i].style.left = hats[i].x + 'px';
+            hats_set[i].style.top = hats[i].y + 'px';
+            if(Math.abs(start.x-hats[i].x+oDiv_player_width/2)<oDiv_player_width/2&&
+                height>=oDiv_game_height-oDiv_player_height*1.2&&
+                height<oDiv_game_height-oDiv_player_height*0.8) {
+                window.cancelAnimationFrame(timer_);
+                start = null;
+                setTimeout(change_img,1500);  //设置定时器，使结束时可以看到被戴绿帽
+
+            }
+
+        }
+
+        window.requestAnimationFrame(function () {
+            _this.move();
+        });
+    }
+
+
+
+    function change_img(ev) {
+        oDiv_game.innerHTML = "<img src=\"CSS/IMG/green/game_over.jpg\" style=\"position: absolute;left: 20%\">"
+    }
+
+
+</script>
+
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    #main_container{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-image: url("CSS/IMG/green/game_start.jpg");
+        background-size: 10%;
+
+    }
+
+    #game_container{
+        position: relative;
+        width: 1040px;
+        height: 585px;
+        border: 1px solid greenyellow;
+        background: white;
+        overflow: hidden;
+    }
+
+    #player{
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        bottom: 0;
+        background-image: url("CSS/IMG/green/game_on.jpg");
+        background-size: cover;
+    }
+
+    .hat{
+        position: absolute;
+        width: 40px;
+        height: 20px;
+        background-image: url("CSS/IMG/green/hat.png");
+        background-size: cover;
+    }
+
+
+    #hat_num{
+        background: white;
+        height: 30px;
+        width: 200px;
+        text-align: center;
+    }
+</style>

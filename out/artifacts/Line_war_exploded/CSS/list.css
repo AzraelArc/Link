@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.ul{
+    list-style: none;
+    height: 400%;
+    position: relative;
+}
+
+.main_container{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+}
+
+.list_container{
+    background-color: #89ff00;
+    position: absolute;
+    width: 20em;
+    height: 10em;
+    overflow: hidden;
+}
+
+.but_container{
+    position: relative;
+    top: 7em;
+    width: 20em;
+    height:2em;
+    background-color: #00bcd4;
+}
+
+li{
+    height: 5em;
+}
+
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="body">
+<div id="main_content">
+    <div id="over"></div>
+    <img src="../CSS/IMG/Image_For_Hentai/102.jpg">
+</div>
+
+</body>
+</html>
+
+<style>
+    #main_content{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    img{
+        height: 100%;
+        width: auto;
+        position: absolute;
+        z-index: -1;
+
+    }
+
+    #over{
+        display: none;
+        border-radius: 100%;
+        border: 1px solid black;
+        position: fixed;
+        width: 12%;
+        height: 24%;
+        position: fixed;
+        background: url('../CSS/IMG/Image_For_Hentai/101.jpg');
+        background-repeat: no-repeat;
+        background-size: auto 416.666%;
+    }
+</style>
+
+<script>
+    var tag;
+    document.oncontextmenu = function (ev) {
+        ev.preventDefault();
+    }
+    window.addEventListener('mousedown', onMouseDown, false);
+    function onMouseDown(e){
+        if(e.button == 2&&tag==0)
+        {
+            document.getElementById("over").style.display = "inline";
+            tag = 1;
+        }
+        else if(e.button == 2&&tag==1){
+            document.getElementById("over").style.display = "none";
+            tag = 0;
+        }
+    }
+    window.onload = function (ev) {
+        var x;
+        var y;
+        tag = 0;
+        document.getElementById("body").onmousemove = function(e){
+            x = e.pageX-50;
+            y = e.pageY-50;
+            document.getElementById("over").style.marginLeft= x+"px";
+            document.getElementById("over").style.backgroundPositionX = -x+"px";
+            document.getElementById("over").style.marginTop = y+"px";
+            document.getElementById("over").style.backgroundPositionY = -y+"px";
+
+            document.getElementById("1").value = x;
+            document.getElementById("2").value = y;
+        }
+    }
+</script>

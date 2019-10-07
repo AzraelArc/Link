@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jsAll/vue.js"></script>
+    <link rel="stylesheet" href="CSS/animate.css">
+</head>
+<body>
+<div class="main_container" id="app">
+    <input type="button" value="click" @click="flag=!flag">
+    <transition enter-active-class="bounceInRight" leave-active-class="bounceOutRight" :duration="200" >
+    <div class="border animated" v-if="flag"></div>
+    </transition>
+    <transition enter-active-class="bounceInRight" leave-active-class="bounceOutRight" :duration="600" >
+    <div class="red animated" v-if="flag"></div>
+    </transition>
+    <transition
+    @before-enter="beforeEnter"
+    @enter="enter"
+    @after-enter="afterEnter">
+    <div class="blue animated" v-if="flag"></div>
+    </transition>
+
+
+</div>
+</body>
+</html>
+
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            flag:false
+        },
+        methods:{
+            beforeEnter(el){
+                el.style.transform = "translate(0,0)"
+            },
+            enter(el,done){
+                el.offsetLeft;
+                el.style.transform = "translate(500px,0)";
+                el.style.transition = 'all 2s ease';
+                done();
+            },
+            afterEnter(el){
+                el.style.transition = 'all 1s ease'
+                el.style.opacity = '0'
+                // this.flag = false;
+            }
+        }
+    })
+</script>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+
+    .main_container{
+        transform-style: preserve-3d;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        /*display: flex;*/
+        /*align-items: center;*/
+        /*justify-content: center;*/
+    }
+
+    .border{
+        position: relative;
+        border: 1px solid black;
+        width: 200px;
+        height: 200px;
+        /*transform: perspective(1000px)  rotateY(-30deg);*/
+    }
+
+    .red{
+        position: relative;
+        background: #00bcd4;
+        width: 200px;
+        height: 200px;
+        /*transform: perspective(1000px) translateZ(-200px) rotateY(-30deg);*/
+    }
+
+    .blue {
+        position: relative;
+        background: dodgerblue;
+        width: 200px;
+        height: 200px;
+        transform-origin: top;
+        /*transform: perspective(1000px) translateZ(-200px) rotateX(-95deg);*/
+    }
+</style>

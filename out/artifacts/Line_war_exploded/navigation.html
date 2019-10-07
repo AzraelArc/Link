@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航页</title>
+    <script type="text/javascript" src="jsAll/vue.js"></script>
+    <link rel="stylesheet" href="CSS/animate.css">
+    <link rel="stylesheet" href="CSS/navigation.css">
+</head>
+<body>
+<div id="app">
+    <div class="innerBox"  ref="back"></div>
+    <div class="navigateBox" @mousemove="updatePosition">
+        <a v-for="(item,i) in url" :href="item">{{ item }}</a>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            urls:[
+                {//哔哩哔哩
+                    url:'https://www.bilibili.com',
+                    img:'',
+                    name:'哔哩哔哩 (゜-゜)つロ 干杯~-bilibili'
+                }
+                // "https://www.bilibili.com",//哔哩哔哩
+                // "http://www.kisssub.org",//爱恋bt
+            ],
+            x:0,
+            y:0,
+        },
+        methods:{
+          updatePosition:function (event) {
+              this.x = event.pageX;
+              this.y = event.pageY;
+              this.$refs.back.style.left = -this.x/13 + 'px'
+              this.$refs.back.style.top = -this.y/13 + 'px'
+
+          }
+        },
+    })
+</script>

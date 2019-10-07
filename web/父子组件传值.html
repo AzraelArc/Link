@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jsAll/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <tag1 :parentsmsg="msg" @func="show"></tag1>
+</div>
+
+
+<template id="tag1">
+    <div>
+        <input type="button" :value="parentsmsg" @click="fun" :title="title">{{msg}}
+    </div>
+
+</template>
+</body>
+</html>
+
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:'父组件中的数据'
+        },
+        methods:{
+            show(data){
+                console.log('调用了父组件的methods'+data)
+            }
+        },
+        components:{
+            'tag1':{
+              template:'#tag1',
+                data:function(){
+                  return {
+                      title:'123',
+                      msg:'我草泥马'
+                  }
+                },
+                //props中的值都是父组件中传过来的
+                props:['parentsmsg'],
+                methods: {
+                  fun(){
+
+                      //emit  触发、调用
+                      this.$emit('func','gduisf')
+                  },
+                }
+            },
+        },
+    })
+</script>

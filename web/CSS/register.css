@@ -1,0 +1,110 @@
+body{
+    overflow: hidden;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+
+#register_box{
+    background: black;
+    background-image: url("IMG/Register_Img/Logo.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+    height: 100%;
+    width: 64%;
+    float: left;
+    box-shadow: -3px 0 5px dodgerblue;
+    animation: border_change 3s linear infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes border_change {
+    0%{box-shadow: -3px 0 5px greenyellow;}
+    50%{box-shadow: -3px 0 5px dodgerblue;}
+    100%{box-shadow: -3px 0 5px greenyellow;}
+
+}
+
+#re_img{
+    float: left;
+    width: 36%;
+    height: 100%;
+    background-image: url("IMG/Register_Img/register.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    animation: img_change 20s forwards infinite cubic-bezier(0.8,0.1,0.2,0.6);
+    transition-duration: 1s;
+}
+
+@keyframes img_change {
+    0%{background-image: url("IMG/Register_Img/register.jpg");}
+    33.3%{background-image: url("IMG/Register_Img/register_1.jpg");}
+    66.6%{background-image: url("IMG/Register_Img/register_2.jpg");}
+    100%{background-image: url("IMG/Register_Img/register.jpg");}
+}
+
+h1{
+    color: #ffffff;
+    font-size: 50px;
+}
+
+
+input[type=text]{
+    margin-top: 100px;
+    width: 450px;
+    height: 43px;
+    border: 3px groove dodgerblue;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+
+input[type=password]{
+    width: 450px;
+    height: 43px;
+    border: 3px groove yellowgreen;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+input[type=button]{
+    width: 450px;
+    height: 43px;
+    border-radius: 5px;
+    margin-top: 30px;
+    font-size: 20px;
+    background-image: url("IMG/Register_Img/Button_img.jpg");
+    background-size: cover;
+}
+
+
+input[type=button]:hover{
+    border: 2px solid dodgerblue;
+}
+
+input[type=button]:active{
+    opacity: 0.7;
+}
+
+#register_content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+small{
+    position: absolute;
+    color: white;
+    bottom: 33px;
+}

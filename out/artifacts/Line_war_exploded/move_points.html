@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+</body>
+</html>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #canvas{
+        display: block;
+        background: #009688;
+    }
+</style>
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx  = canvas.getContext("2d");
+
+    var num = 2;//开始粒子数
+    var sum = 500 //最终粒子数
+    var data = [];
+    var w,h;
+    var mx , my;
+
+
+    init();
+
+    canvas.onmousemove = function (e) {
+        mx = e.clientX ||e.pageX;
+        my = e.clientY ||e.pageY;
+    }
+
+
+    
+    function init() {
+        w = canvas.width = window.innerWidth || document.documentElement.clientWidth;
+        h = canvas.height = window.innerHeight || document.documentElement.clientHeight;
+
+
+        for (var i=0;i<num;i++){
+            data[i] = {
+                x:Math.random()*w,
+                y:Math.random()*h,
+                vx:Math.random()*5-2.5,
+                vy:Math.random()*5-2.5,
+            }
+        }
+
+    }
+
+    //创建圆点
+    function circle(x,y) {
+        ctx.save();
+        ctx.fillStyle = "#fff"
+        ctx.beginPath();
+        ctx.arc(x,y,3,Math.PI*2,false);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+    }
+
+
+    //建立连线
+    function line(x1,y1,x2,y2) {
+        ctx.save();
+        ctx.strokeStyle = "#fff"
+        ctx.beginPath();
+        ctx.moveTo(x1,y1);
+        ctx.lineTo(x2,y2);
+        ctx.stroke();
+        ctx.closePath();
+        ctx.restore();
+    }
+
+    //运动
+    function draw() {
+        // ctx.clearRect(0,0,w,h);
+        //重置画板并调整大小
+        w = canvas.width = window.innerWidth || document.documentElement.clientWidth;
+        h = canvas.height = window.innerHeight || document.documentElement.clientHeight;
+
+        for(var i=0;i<num;i++){
+            if(data[i].x<3||data[i].x>w){data[i].vx = -data[i].vx;if (data[i].x>w) data[i].x = w;}
+            if(data[i].y<3||data[i].y>h){data[i].vy = -data[i].vy;if (data[i].y>h) data[i].y = h;}
+            data[i].x += data[i].vx;
+            data[i].y += data[i].vy;
+            circle(data[i].x,data[i].y)
+            for (var j=0;j<num;j++)
+            {
+                if ((Math.pow(data[i].x-data[j].x,2)+Math.pow(data[i].y-data[j].y,2))<=Math.pow(100,2))
+                    line(data[i].x,data[i].y,data[j].x,data[j].y);
+
+            }
+            if ((Math.pow(data[i].x-mx,2)+Math.pow(data[i].y-my,2))<=Math.pow(100,2))
+                line(data[i].x,data[i].y,mx,my);
+        }
+
+
+        if(num<=sum) {
+            data.push({
+                x: Math.random() * w,
+                y: Math.random() * h,
+                vx: Math.random() * 5 - 2.5,
+                vy: Math.random() * 5 - 2.5,
+            });
+            num += 1;
+        }
+
+        try {
+            window.requestAnimationFrame(draw);
+        }
+        catch (e) {
+            setInterval(draw,1000/60);
+        }
+    }
+
+
+    draw();
+
+
+</script>

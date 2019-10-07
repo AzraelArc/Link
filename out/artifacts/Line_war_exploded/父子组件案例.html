@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jsAll/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="button" value="修改前" ref="int" @click="change"  id="int">
+<!--    <ul>-->
+<!--        <li v-for="item in list" :key="item.id">-->
+<!--            {{item.name}}-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--    <ta></ta>-->
+</div>
+
+<template id="tag">
+</template>
+
+</body>
+</html>
+<script>
+    var commentBox = {
+        template:'#tag'
+    }
+
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            list:[
+                {name: 'Azrael', id: 99, time: new Date()},
+                {name: 'Alice', id: 66, time: new Date()},
+                {name: 'Arc', id: 7, time: new Date()},
+                {name: 'Banner', id: 18 , time:new Date()}
+                ]
+        },
+        methods:{
+            change(){
+                this.$refs.int.style.width = '2000px'}
+        },
+        components:{
+            'ta':commentBox,
+        },
+
+    })
+</script>
